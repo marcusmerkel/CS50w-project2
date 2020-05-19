@@ -1,3 +1,4 @@
 _assets
 config.codekit3
 .vscode
+__pycache__

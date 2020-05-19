@@ -1,0 +1,14 @@
+@import "../../lib/rfs/scss.scss";
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1.welcome {
+    @include font-size(4.5rem);
+    margin-top: 10vh;
+}
+
+#welcomeImage {
+    height: calc(3.5rem + 11vw);
+}
