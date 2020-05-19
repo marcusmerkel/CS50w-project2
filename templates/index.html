@@ -4,8 +4,78 @@
     Home
 {% endblock %}
 
+{% block head %}
+
+{% raw -%}
+<script id="welcomeUser" type="text/template">
+    <h2>Welcome, {{ name }}!</h2>
+    <form action="/messageRoom" class="my-3">
+        <button type="submit" class="btn btn-primary mb-2">Enter</button>
+    </form>
+</script>
+
+<script id="pickDN" type="text/template">
+    <h2 class="pick">First time here?</h3>
+    <h2 class="pick">Pick a <strong>Displayname</strong></h2>
+    <h2 id="dn"></h2>
+    <form id="setdisplayname" class="mx-auto">
+        <div class="form-row align-items-center justify-content-center mt-4">
+            <div class="col-sm-7">
+                <label class="sr-only" for="displayname">Displayname</label>
+                <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">@</div>
+                </div>
+                <input type="text" class="form-control form-control-lg" id="displayname" placeholder="johndoe72" required>        
+                </div>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-2">Get started</button>
+            </div>
+        </div>
+    </form>
+</script>
+{%- endraw %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // localStorage.setItem("displayName", "Marcus"); // just for debug
+        localStorage.clear(); // just for debug
+        getDisplayName();
+
+        document.getElementById('setdisplayname').onsubmit = setDisplayName;
+    });
+
+    function getDisplayName() {
+        var displayName = localStorage.getItem("displayName");
+        if (displayName === null) {
+            const template = Handlebars.compile(document.querySelector('#pickDN').innerHTML);
+            const welcome = template();
+            document.querySelector('#dn').innerHTML = welcome;
+        } else {
+            const template = Handlebars.compile(document.querySelector('#welcomeUser').innerHTML);
+            const welcome = template({'name': displayName});
+            document.querySelector('#dn').innerHTML = welcome;
+        }
+    }
+
+    function setDisplayName() {
+        var dn = document.getElementById('displayname').value;
+        localStorage.setItem("displayName", dn);
+        getDisplayName();
+    }
+
+</script>
+{% endblock %}
+
 {% block body %}
-<h1 class="welcome">Welcome to</h1>
-<img src="{{ url_for('static', filename='images/logo.png') }}" id="welcomeImage" alt="Flack">
-<p>Todo: Project 2</p>
+<div class="container welcome">
+    <h1 class="welcome">Welcome to</h1>
+    <img src="{{ url_for('static', filename='images/logo.png') }}" class="welcome" alt="Flack">
+    <hr>
+</div>
+
+<div id="dn">
+    
+</div>
 {% endblock %}

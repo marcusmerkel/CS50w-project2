@@ -1,10 +1,34 @@
-body {
+body, h1, h2, p, a, li {
   font-family: "Titillium Web", sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: 200 !important;
+}
+
+h1 {
+  font-size: calc(1.525rem + 3.3vw);
+}
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+h2 {
+  font-size: calc(1.375rem + 1.5vw);
+}
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 2.5rem;
+  }
 }
 
 h1.welcome {
   font-size: calc(1.575rem + 3.9vw);
-  margin-top: 10vh;
+  margin-top: 7vh;
+  font-weight: 300;
+  color: #444444;
 }
 @media (min-width: 1200px) {
   h1.welcome {
@@ -12,6 +36,177 @@ h1.welcome {
   }
 }
 
-#welcomeImage {
+img.welcome {
   height: calc(3.5rem + 11vw);
+}
+
+.pick-displayname {
+  margin-top: 2rem;
+}
+
+h2.pick {
+  font-size: calc(1.375rem + 1.5vw);
+  font-weight: 200;
+}
+@media (min-width: 1200px) {
+  h2.pick {
+    font-size: 2.5rem;
+  }
+}
+
+h2.pick strong {
+  font-weight: 300;
+}
+
+.setdisplay {
+  width: 100%;
+}
+
+#displayname {
+  font-size: calc(1rem + .75vw);
+  line-height: calc(1.25rem + .75vw);
+  font-weight: 200;
+}
+
+/*------------------------------------
+- COLOR primary
+------------------------------------*/
+.alert-primary {
+  color: #136abb;
+  background-color: #114;
+  border-color: #102100ff;
+}
+
+.alert-primary hr {
+  border-top-color: #ebf4fc;
+}
+
+.alert-primary .alert-link {
+  color: #0e508d;
+}
+
+.badge-primary {
+  color: #212529;
+  background-color: #5ca7ee;
+}
+
+.badge-primary[href]:hover, .badge-primary[href]:focus {
+  color: #212529;
+  background-color: #2d8ee9;
+}
+
+.bg-primary {
+  background-color: #5ca7ee !important;
+}
+
+a.bg-primary:hover, a.bg-primary:focus,
+button.bg-primary:hover,
+button.bg-primary:focus {
+  background-color: #2d8ee9 !important;
+}
+
+.border-primary {
+  border-color: #5ca7ee !important;
+}
+
+.btn-primary {
+  color: #212529;
+  background-color: #5ca7ee;
+  border-color: #5ca7ee;
+}
+
+.btn-primary:hover {
+  color: #212529;
+  background-color: #3b95ea;
+  border-color: #2d8ee9;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(92, 167, 238, 0.5);
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  color: #212529;
+  background-color: #5ca7ee;
+  border-color: #5ca7ee;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+  color: #212529;
+  background-color: #2d8ee9;
+  border-color: #1f86e7;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(92, 167, 238, 0.5);
+}
+
+.btn-outline-primary {
+  color: #5ca7ee;
+  background-color: transparent;
+  border-color: #5ca7ee;
+}
+
+.btn-outline-primary:hover {
+  color: #212529;
+  background-color: #5ca7ee;
+  border-color: #5ca7ee;
+}
+
+.btn-outline-primary:focus, .btn-outline-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(92, 167, 238, 0.5);
+}
+
+.btn-outline-primary.disabled, .btn-outline-primary:disabled {
+  color: #5ca7ee;
+  background-color: transparent;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active, .show > .btn-outline-primary.dropdown-toggle {
+  color: #212529;
+  background-color: #5ca7ee;
+  border-color: #5ca7ee;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(92, 167, 238, 0.5);
+}
+
+.list-group-item-primary {
+  color: #136abb;
+  background-color: #102100ff;
+}
+
+.list-group-item-primary.list-group-item-action:hover, .list-group-item-primary.list-group-item-action:focus {
+  color: #136abb;
+  background-color: #ebf4fc;
+}
+
+.list-group-item-primary.list-group-item-action.active {
+  color: #212529;
+  background-color: #136abb;
+  border-color: #136abb;
+}
+
+.table-primary,
+.table-primary > th,
+.table-primary > td {
+  background-color: #102100ff;
+}
+
+.table-hover .table-primary:hover {
+  background-color: #ebf4fc;
+}
+
+.table-hover .table-primary:hover > td,
+.table-hover .table-primary:hover > th {
+  background-color: #ebf4fc;
+}
+
+.text-primary {
+  color: #5ca7ee !important;
+}
+
+a.text-primary:hover, a.text-primary:focus {
+  color: #2d8ee9 !important;
 }
